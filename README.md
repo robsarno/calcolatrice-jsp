@@ -1,2 +1,2 @@
-# calcolatrice-jsp
+# JSP Calculator
 a simple calculator using JSP
