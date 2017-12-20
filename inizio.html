@@ -1,0 +1,68 @@
+<html>
+<head>
+<!--meta charset="utf-8"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <br>
+  <div class="jumbotron">
+    <h1 class="display-3">Calcolatrice</h1>
+    <p class="lead">Una semplice calcolatrice utilizzando una JSP.</p>
+    <hr>
+    <p>Inserisci due numeri, seleziona l'operatore desiderato e clicca sul pulsante!</p>
+  </div>
+<form method="get" action="elabora.jsp" id="needs-validation" novalidate>
+  <fieldset>
+    <div class="form-group">
+      <label for="n1">Primo numero:</label>
+      <input type="number" class="form-control" name="n1" placeholder="Inserisci il primo numero" step=0.001 required>
+      <div class="invalid-feedback">Inserisci un numero (precisione 0,001)</div>
+    </div>
+    <div class="form-group">
+      <label for="n2">Secondo numero:</label>
+      <input type="number" class="form-control" name="n2" placeholder="Inserisci il secondo numero" step=0.001 required>
+      <div class="invalid-feedback">Inserisci un numero (precisione 0,001)</div>
+    </div>
+    <div class="form-group">
+      <label for="opand">Seleziona operatore:</label>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input type="radio" name="opand" value="p" checked="checked">+</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input type="radio" name="opand" value="m">-</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input type="radio" name="opand" value="pr">*</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <label class="form-check-label"><input type="radio" name="opand" value="d">/</label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Calcola</button>
+  </fieldset>
+</form>
+</div>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        var form = document.getElementById('needs-validation');
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      }, false);
+    })();
+    </script>
+
+</body>
+<html>
